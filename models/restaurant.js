@@ -2,10 +2,6 @@ let mongoose = require("mongoose");
 
 
 let restaurantSchema = mongoose.Schema({
-    _id: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true
-    },
     address: {
         building: {
             type: String,
