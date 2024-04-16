@@ -1,0 +1,51 @@
+<h2> New Added Restaurant</h2>
+
+{{#if successForAdd}}
+  {{#if newRestaurant}}
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Borough</th>
+          <th>Cuisine</th>
+          <th>Address</th>
+          <th>Coordinates</th>
+          <th>Restaurant ID</th>
+          <th>Grades</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{newRestaurant.result.name}}</td>
+          <td>{{newRestaurant.result.borough}}</td>
+          <td>{{newRestaurant.result.cuisine}}</td>
+          <td>{{newRestaurant.result.address.building}},
+            {{newRestaurant.result.address.street}},
+            {{newRestaurant.result.address.zipcode}}</td>
+          <td>{{newRestaurant.result.address.coord}}</td>
+          <td>{{newRestaurant.result.restaurant_id}}</td>
+          <td>
+            <table class="inside">
+              <tr>
+                <th>Date</th>
+                <th>Grade</th>
+                <th>Score</th>
+              </tr>
+              {{#each newRestaurant.result.grades}}
+                <tr>
+                  <td>{{this.date}}</td>
+                  <td>{{this.grade}}</td>
+                  <td>{{this.score}}</td>
+                </tr>
+              {{/each}}
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  {{else}}
+    <p>Error in adding Restaurant.</p>
+  {{/if}}
+{{else}}
+  <p>Restaurant Id is Already Exist.</p>
+{{/if}}

@@ -1,0 +1,48 @@
+<h1>All Restaurant</h1>
+{{#if restaurants}}
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Borough</th>
+        <th>Cuisine</th>
+        <th>Address</th>
+        <th>Coordinates</th>
+        <th>Restaurant ID</th>
+        <th>Grades</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each restaurants}}
+        <tr>
+          <td>{{this.name}}</td>
+          <td>{{this.borough}}</td>
+          <td>{{this.cuisine}}</td>
+          <td>{{this.address.building}},
+            {{this.address.street}},
+            {{this.address.zipcode}}</td>
+          <td>{{this.address.coord}}</td>
+          <td>{{this.restaurant_id}}</td>
+          <td>
+            <table class="inside">
+              <tr>
+                <th>Date</th>
+                <th>Grade</th>
+                <th>Score</th>
+              </tr>
+              {{#each this.grades}}
+                <tr>
+                  <td>{{this.date}}</td>
+                  <td>{{this.grade}}</td>
+                  <td>{{this.score}}</td>
+                </tr>
+              {{/each}}
+            </table>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p>No restaurants found.</p>
+{{/if}}

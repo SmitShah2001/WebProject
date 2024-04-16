@@ -1,0 +1,31 @@
+<div class="container home">
+  <h2>Search by Restaurant ID</h2>
+  <form id="restaurantForm">
+    <div class="">
+      <label for="id">Restaurant (Object) Id:</label>
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          id="id"
+          placeholder="Enter (Object) ID here"
+          aria-label="ID"
+        />
+      </div>
+    </div>
+
+    <div class="mb-3 mt-3">
+      <input type="submit" class="btn btn-primary" value="Submit" />
+    </div>
+  </form>
+</div>
+
+<script>
+  document.getElementById('restaurantForm').addEventListener('submit', function
+  (e) { e.preventDefault(); var id = document.getElementById('id').value;
+  window.location.href = '/api/restaurants/' + id; });
+</script>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+></script>

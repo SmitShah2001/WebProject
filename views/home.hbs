@@ -1,0 +1,20 @@
+<div class="container home">
+
+  <h1>{{title}}</h1>
+  <p>Welcome to our Web Framework 1 Express <b>Project App</b></p>
+
+  {{#if success}}
+    <h4>{{task}} Successful!</h4>
+    <p>Congratulations, your account has been {{subtask}}.</p>
+  {{/if}}
+
+  {{#if error}}
+    <p>{{error}}</p>
+  {{/if}}
+
+  <div class="button-container">
+    <a href="/api/users/login" class="btn btn-primary">Log In</a>
+    <a href="/api/users/register" class="btn btn-success">Register</a>
+  </div>
+
+</div>

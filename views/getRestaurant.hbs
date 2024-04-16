@@ -1,0 +1,16 @@
+<div class="container getrestaurant">
+
+  <h4>Get Restaurants</h4>
+  <form action="/api/restaurants" method="GET">
+    <label for="page">Page:</label>
+    <input type="number" id="page" name="page" required /><br /><br />
+
+    <label for="perPage">Per Page:</label>
+    <input type="number" id="perPage" name="perPage" required /><br /><br />
+
+    <label for="borough">Borough:</label>
+    <input type="text" id="borough" name="borough" /><br /><br />
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

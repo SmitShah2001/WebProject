@@ -1,0 +1,172 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* padding: 50px; */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+header {
+  height: auto;
+  width: 100%;
+  background-color: #7276fd;
+  color: #fff;
+  text-align: center;
+  /* padding: 20px; */
+}
+
+nav a {
+  color: #fff !important;
+}
+
+.content {
+  flex-grow: 1;
+  text-align: center;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  height: calc(85vh - 140px);
+}
+
+/* Style for the entire table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #333;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Style for table headers */
+th {
+  background-color: #7276fd;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  /* padding: 10px; */
+  border: 2px solid #333;
+}
+
+/* Style for table data cells */
+td {
+  text-align: center;
+  /* padding: 8px; */
+  border: 1px solid #333;
+  color: #333;
+}
+
+/* Style for alternating rows */
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Style for hover effect on rows */
+tbody tr:hover {
+  background-color: #ddd;
+}
+
+.name-tags {
+  display: flex;
+  justify-content: center;
+}
+
+.student-info {
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.space {
+  width: 20px;
+}
+
+footer {
+  background-color: #7276fd;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+}
+
+/* Login Page - Index  */
+
+.container {
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: #fff;
+  border: 2px solid;
+  border-color: #7276fd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+  color: #000;
+}
+
+label {
+  font-weight: bold;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Home Page */
+
+.home {
+  padding: 20px;
+}
+
+/* getrestaurant Page*/
+
+.getrestaurant input[type="text"],
+input[type="number"],
+input[type="password"] {
+  margin-bottom: 5px;
+}

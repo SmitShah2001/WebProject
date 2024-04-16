@@ -1,0 +1,17 @@
+<div class="container home">
+
+  <h1>{{title}}</h1>
+  {{#if dashboard}}
+    <p>Welcome to our Web Framework 1 Express <b>Project App</b></p>
+  {{/if}}
+
+  {{#if success}}
+    <h4>{{task}} Successful!</h4>
+    <p>Congratulations, your account has been {{subtask}}.</p>
+  {{/if}}
+
+  {{#if error}}
+    <p>{{error}}</p>
+  {{/if}}
+
+</div>

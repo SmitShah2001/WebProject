@@ -1,0 +1,210 @@
+<div class="container mt-5">
+  <h1>Update Restaurant</h1>
+  <form id="restaurantForm" action="{{url}}" method="POST">
+    <div class="row g-3">
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="Name"
+          aria-label="Name"
+          value="{{content.name}}"
+          required
+        />
+      </div>
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          id="borough"
+          name="borough"
+          placeholder="Borough"
+          aria-label="Borough"
+          value="{{content.borough}}"
+          required
+        />
+      </div>
+    </div><br />
+
+    <!-- Address Fields -->
+    <div class="row g-3">
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          id="building"
+          name="building"
+          placeholder="Building"
+          aria-label="Building"
+          value="{{content.address.building}}"
+          required
+        />
+      </div>
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          id="street"
+          name="street"
+          placeholder="Street"
+          aria-label="Street"
+          value="{{content.address.street}}"
+          required
+        />
+      </div>
+    </div><br />
+
+    <div class="row g-3">
+      <!-- Coordinates -->
+      {{! <div class="col"> }}
+      <input
+        type="hidden"
+        class="form-control"
+        id="longitute"
+        name="longitute"
+        placeholder="Longitude"
+        aria-label="Longitude"
+        value="{{content.address.coord.[0]}}"
+        required
+      />
+      {{! </div> }}
+      {{! <div class="col"> }}
+      <input
+        type="hidden"
+        class="form-control"
+        id="latitude"
+        name="latitude"
+        placeholder="Latitude"
+        aria-label="Latitude"
+        value="{{content.address.coord.[1]}}"
+        required
+      />
+      {{! </div> }}
+      <!--Zipcode -->
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          id="zipcode"
+          name="zipcode"
+          placeholder="Zipcode"
+          aria-label="Zipcode"
+          value="{{content.address.zipcode}}"
+          required
+        />
+      </div>
+      <!-- Cuisine Field -->
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          id="cuisine"
+          name="cuisine"
+          placeholder="Cuisine"
+          aria-label="Cuisine"
+          value="{{content.cuisine}}"
+          required
+        />
+      </div>
+    </div><br />
+
+    <!-- Grades Input Fields -->
+    {{#each content.grades}}
+      <div class="grade-fields">
+        <div class="row g-3 grade-entry">
+          {{! <div class="col"> }}
+          <input
+            type="hidden"
+            class="form-control"
+            name="grades[date][]"
+            placeholder="Date"
+            aria-label="Date"
+            value="{{this.date}}"
+            required
+          />
+          {{! </div> }}
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              name="grades[grade][]"
+              placeholder="Grade"
+              aria-label="Grade"
+              value="{{this.grade}}"
+              required
+            />
+          </div>
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              name="grades[score][]"
+              placeholder="Score"
+              aria-label="Score"
+              value="{{this.score}}"
+              required
+            />
+          </div>
+        </div>
+      </div>
+    {{/each}}
+    <br />
+
+    <!-- Button to Add More Grades -->
+    <button type="button" class="btn btn-secondary" id="addGrade">Add Another
+      Grade</button>
+    <br /><br />
+
+    <!-- Restaurant ID -->
+    <div class="row g-3">
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          id="restaurant_id"
+          name="restaurant_id"
+          placeholder="Restaurant ID"
+          aria-label="Restaurant ID"
+          value="{{content.restaurant_id}}"
+          required
+        />
+      </div>
+    </div><br />
+
+     <!-- Restaurant ID -->
+    <div class="row g-3">
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          id="token"
+          name="token"
+          placeholder="enter token here"
+          aria-label="token"
+          value=""
+          required
+        />
+      </div>
+    </div><br />
+
+    <!-- Hidden Method Field for PUT -->
+    <input type="hidden" name="_method" value="PUT" />
+
+    <!-- Submit Button -->
+    <div class="mb-3">
+      <input type="submit" class="btn btn-primary" value="Submit" />
+    </div>
+  </form>
+</div>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+></script>
+<script>
+  // Add event listener to the "Add Another Grade" button
+  document.getElementById('addGrade').addEventListener('click', function () {
+  const gradeEntry = document.querySelector('.grade-entry').cloneNode(true);
+  document.querySelector('.grade-fields').appendChild(gradeEntry); });
+</script>

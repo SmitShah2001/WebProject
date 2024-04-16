@@ -1,0 +1,88 @@
+<html>
+
+  <head>
+    <title>{{title}}</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="icon" type="image/x-icon" href="/images/6643380.png" />
+    {{! temp deleted }}
+
+  </head>
+
+  <body>
+    <header>
+      <div class="name-tags">
+        <div class="student-info">
+          <p>Smit Shah : N01580089</p>
+        </div>
+
+        <!-- Add some space between the two sets of information -->
+        <div class="space"></div>
+
+        <div class="student-info">
+          <p>Vivek Jethva : N01579474</p>
+        </div>
+      </div>
+
+      <nav
+        class="navbar navbar-expand-lg navbar-light"
+        style="border: 5px solid #28a745;"
+      >
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            <!-- Use "mr-auto" to push items to the left -->
+            <li class="nav-item active">
+              <a class="nav-link" href="/api/restaurants/getRestaurantForm">Get
+                Restaurant By Page</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/api/restaurants/addRestaurantForm">Add
+                Restaurant</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/api/restaurants/searchByID">Seach
+                Restaurant By ID</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/api/restaurants/searchByName">Search
+                Restaurant By Name</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active" id="loginLink" style="display: none;">
+              <a
+                id="loginButton"
+                class="nav-link"
+                href="/api/users/login"
+              >Login</a>
+            </li>
+            <li class="nav-item active" id="logoutLink">
+              <a
+                id="logoutButton"
+                class="nav-link"
+                href="/api/users/logout"
+              >Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="content">
+
+      {{{body}}}
+
+    </div>
+    <footer>
+      <p>
+        <span>Smit Shah</span>
+        : smitdshah1901@gmail.com |
+        <span>Vivek Jethva</span>
+        : vivekhjtv18@gmail.com</p>
+    </footer>
+  </body>
+
+</html>
